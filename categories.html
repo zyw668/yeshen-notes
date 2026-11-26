@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分类管理 - 夜神笔记</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="./index.html">🌙 夜神笔记</a>
+      <span class="nav-main" id="navMain"></span>
+      <span class="nav-right" id="navAuth"></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title">分类管理</h1>
+
+    <!-- 新建分类表单 -->
+    <form class="cat-form" id="catForm">
+      <input id="catName" type="text" placeholder="分类名称，如 交易心理" required>
+      <input id="catIcon" type="text" placeholder="图标 emoji" maxlength="4">
+      <input id="catSort" type="number" placeholder="排序" class="sort-input">
+      <button type="submit" class="btn btn-primary">＋ 添加分类</button>
+    </form>
+
+    <!-- 分类列表（categories.js 渲染） -->
+    <div id="catList"></div>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/supabase-client.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/categories.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 夜神笔记</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    /* 登录页专属样式，内联在这避免污染全局 */
+    .login-wrap {
+      max-width: 380px;
+      margin: 80px auto;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .login-wrap h1 { font-size: 22px; margin-bottom: 6px; }
+    .login-wrap .sub { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+    .login-wrap label { display: block; font-size: 13px; margin: 12px 0 6px; }
+    .login-wrap input {
+      width: 100%; padding: 10px 12px; border: 1px solid var(--border);
+      border-radius: 6px; font-size: 14px; outline: none;
+    }
+    .login-wrap input:focus { border-color: var(--accent); }
+    .login-wrap .btn { width: 100%; margin-top: 20px; padding: 10px; font-size: 14px; }
+    .login-err { color: #cf222e; font-size: 13px; margin-top: 12px; min-height: 18px; }
+    .login-tip { font-size: 12px; color: var(--muted); margin-top: 16px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="./index.html">🌙 夜神笔记</a>
+      <span class="nav-main"><a href="./index.html">首页</a></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="login-wrap">
+      <h1>登录</h1>
+      <p class="sub">只有作者能编辑笔记</p>
+      <form id="loginForm">
+        <label for="email">邮箱</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+        <label for="password">密码</label>
+        <input type="password" id="password" required placeholder="至少 6 位">
+        <button type="submit" class="btn btn-primary">登录</button>
+        <div class="login-err" id="loginErr"></div>
+      </form>
+      <p class="login-tip">
+        没有账号？笔记站仅作者本人可编辑。如需开通，请在 Supabase 控制台
+        （Authentication → Users → Add user）手动创建用户。
+      </p>
+    </div>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/supabase-client.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+</html>

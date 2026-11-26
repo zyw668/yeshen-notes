@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>写笔记 - 夜神笔记</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="./index.html">🌙 夜神笔记</a>
+      <span class="nav-main" id="navMain"></span>
+      <span class="nav-right" id="navAuth"></span>
+    </div>
+  </nav>
+
+  <!-- 编辑器左右分栏 -->
+  <div class="editor-layout">
+    <!-- 左：编辑区 -->
+    <div class="editor-pane">
+      <div class="editor-toolbar">
+        <input id="titleInput" type="text" placeholder="输入笔记标题…">
+        <select id="categorySelect" class="field"></select>
+        <a class="btn" href="./categories.html" title="管理分类">管理分类</a>
+        <button class="btn" id="backBtn">返回</button>
+        <button class="btn btn-danger" id="deleteBtn" style="display:none;">删除</button>
+        <button class="btn btn-primary" id="saveBtn">保存</button>
+      </div>
+      <textarea id="contentInput" class="editor-textarea" placeholder="在这里用 Markdown 写笔记…"></textarea>
+    </div>
+
+    <!-- 右：实时预览 -->
+    <div class="preview-pane">
+      <div class="markdown" id="preview"></div>
+    </div>
+  </div>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/supabase-client.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/editor.js"></script>
+</body>
+</html>
