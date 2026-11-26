@@ -1,0 +1,9 @@
+# IDE 自动生成的分享打包目录（不需要进仓库）
+.trae-html-share-packages/
+
+# 系统垃圾文件
+Thumbs.db
+.DS_Store
+
+# 编辑器/系统临时文件
+*.log
