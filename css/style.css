@@ -72,6 +72,7 @@ img { max-width: 100%; }
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 6px;
+  white-space: nowrap; /* 链接文字不换行 */
 }
 .nav-main a:hover, .nav-right a:hover { background: var(--accent-bg); color: var(--accent); text-decoration: none; }
 .nav-main a.active, .nav-right a.active { background: var(--accent-bg); color: var(--accent); }
@@ -411,4 +412,16 @@ select.field {
   .editor-layout { grid-template-columns: 1fr; height: auto; }
   .editor-pane { height: 50vh; }
   .preview-pane { min-height: 50vh; }
+}
+
+/* 手机（窄屏）：压缩导航尺寸，避免标题和链接挤成两行 */
+@media (max-width: 600px) {
+  .navbar-inner { padding: 8px 12px; gap: 8px; }
+  .brand { font-size: 16px; gap: 4px; white-space: nowrap; }
+  .nav-main { gap: 2px; margin-left: 0; }
+  .nav-right { gap: 2px; }
+  .nav-main a, .nav-right a { font-size: 13px; padding: 4px 6px; }
+  .container { padding: 20px 14px 40px; }
+  .cat-form { padding: 12px; gap: 8px; }
+  .cat-form #catName { min-width: 100%; }
 }
